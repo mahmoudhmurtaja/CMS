@@ -1,0 +1,84 @@
+﻿<!--model CreateUserDto
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<h4>Edit User</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>-->
+            @*<input type="hidden" asp-for="" />*@
+            <!--<div class="form-group">
+                <label class="control-label">First Name</label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Last Name</label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Mobile" class="control-label"></label>
+                <input asp-for="Mobile" class="form-control" />
+                <span asp-validation-for="Mobile" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Type" class="control-label"></label>
+                <select asp-for="Type" class="form-control" id="userTypeList">
+                    <option>--select--</option>
+                    <option value="@UserType.Admin">Admin</option>
+                    <option value="@UserType.OrganizationAdmin">OrganizationAdmin</option>
+                    <option value="@UserType.User">User</option>
+                </select>
+                <span asp-validation-for="Type" class="text-danger"></span>
+            </div>
+            <div class="form-group" id="OrganizationDiv">
+                <label class="control-label">Organization</label>
+                <select data-live-search="true" asp-for="OrganizationId" class="form-control selectpicker" asp-items="ViewBag.organization">
+                    <option>--select--</option>
+                </select>
+                <span asp-validation-for="OrganizationId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Gender" class="control-label"></label>
+                <input asp-for="Gender" type="radio" value="@Gender.Male" /> Male
+                <input asp-for="Gender" type="radio" value="@Gender.Female" /> Female
+                <span asp-validation-for="Gender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+                <a class="btn btn-danger" asp-action="Index">Back</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+    $(document).ready(function () {
+        $("#OrganizationDiv").hide();
+        $("#userTypeList").change(function () {
+            var selectedValue = $(this).val();
+            if (selectedValue == 'OrganizationAdmin') {
+                $("#OrganizationDiv").show();
+            } else {
+                $("#OrganizationDiv").hide();
+            }
+        });
+    });
+    </script>
+}-->
+
+
+

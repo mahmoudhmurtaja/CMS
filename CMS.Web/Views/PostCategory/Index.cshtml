@@ -1,0 +1,70 @@
+﻿@model IEnumerable<CMS.Web.Models.PostCategory>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<a href="~/PostCategory/Create" class="btn btn-sm btn-success font-weight-bold">
+    <i class="flaticon2-cube"></i> Create new
+</a>
+<hr />
+@if (Model.Any())
+{
+    <div class="card card-custom">
+        <div class="card-header">
+            <div class="card-title">
+                <span class="card-icon">
+                    <i class="flaticon2-chat-1 text-primary"></i>
+                </span>
+                <h3 class="card-label">
+                    Post Category
+                    <small> Maneg all Post Category</small>
+                </h3>
+            </div>
+
+        </div>
+        <div class="card-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Id)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Name)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Id)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </td>
+                            <td>
+                                <a href="~/PostCategory/Edit/@item.Id" class="btn btn-warning"><i class="flaticon flaticon-edit"></i>Edit</a>
+                                <a href="~/PostCategory/Delete/@item.Id" class="btn btn-danger" btn><i class="flaticon flaticon-delete"></i>Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+
+
+        </div>
+    </div>
+}
+else
+{
+    <div class="alert alert-warning">
+        No Data !!
+    </div>
+}
+
+

@@ -1,0 +1,65 @@
+        Name :Jamal Al-Mahlawi                                     ID:20160457
+                                                      AI
+                                                  Homework2
+                                                (Use SWI Prolog)
+
+1)      Consider the following prolog program.
+in(p0, kitchen).
+in(c1, diningroom).
+in(c2, kitchen).
+in(c3, kitchen).
+in(c4, kitchen).
+plate(p0).
+cup(c1).
+cup(c2).
+cup(c3).
+cup(c4).
+clean(p0).
+dirty(c1).
+clean(c2).
+dirty(c3).
+clean(c4).
+toWash(X):-
+       in(X, kitchen), write('In:'), write(X),nl,
+       cup(X), write('Cup:'), write(X),nl,
+       dirty(X) , write('Dirty:'), write(X),nl,
+       fail.
+
+a)      What is the output of the following query?
+?- toWash(X).
+In: p0
+In: c2
+Cup: c2
+In: c3
+Cup: c3
+Dirty: c3
+In: c4
+Cup: c4
+
+    ========================================================
+b)    Suppose we add a cut toWash as follows:
+toWash(X):-
+     in(X, kitchen), write('In:'), write(X),nl,
+     cup(X), write('Cup:'), write(X), nl, !,
+     dirty(X), write('Dirty:'), write(X), nl,
+     fail.
+What is the output of the following query?
+?- toWash(X).
+
+In: p0
+In: c2
+Cup: c2
+no
+       =========================================================
+2)     Write Prolog program that reads the students grades in AI class and keep reading until stop is read.
+Find the number of students whose grades are:
+Between 90 - 100
+Between 75 and less than 90
+Between 60 and less than 75
+
+So the output should look like:
+Number of student with grades between 90 to 100 is ###
+Number of student with grades between 75 to less than 90 is ###
+Number of student with grades between 60 to less than 75 is ###
+End of Homework
+

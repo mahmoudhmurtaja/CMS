@@ -1,0 +1,79 @@
+﻿@model IEnumerable<CMS.Web.Models.Post>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<a href="~/Post/Create" class="btn btn-sm btn-success font-weight-bold">
+    <i class="flaticon2-cube"></i> Create new
+</a>
+<hr />
+@if (Model.Any())
+{
+    <div class="card card-custom">
+        <div class="card-header">
+            <div class="card-title">
+                <span class="card-icon">
+                    <i class="flaticon2-chat-1 text-primary"></i>
+                </span>
+                <h3 class="card-label">
+                    Post
+                    <small> Manege All Posts</small>
+                </h3>
+            </div>
+
+        </div>
+        <div class="card-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Title</th>
+                        <th>Date</th>
+                        <th>Category</th>
+                        <th>Image</th>
+                        <th>Attachment</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </td>
+                        <td>
+                            @item.PublishAt.ToString("yyyy/MM/dd")
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PostCategory.Name)
+                        </td>
+                        <td>
+                            <img class="=img-fluid" width="150" src="~/Images/@item.ImageUrl"/>
+                        </td>
+                        <td>
+                            <a href="~/Attachments/@item.AttachmentUrl">Link</a>
+                        </td>
+                        <td>
+                            <a href="~/Post/Edit/@item.Id" class="btn btn-warning"><i class="flaticon flaticon-edit"></i>Edit</a>
+                            <a href="~/Post/Delete/@item.Id" class="btn btn-danger" btn><i class="flaticon flaticon-delete"></i>Delete</a>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+}
+else
+{
+    <div class="alert alert-warning">
+        No Data !!
+    </div>
+}
+
+

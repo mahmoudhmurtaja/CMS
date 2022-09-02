@@ -1,0 +1,75 @@
+﻿@model List<UserViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<a href="~/User/Create" class="btn btn-sm btn-success font-weight-bold">
+    <i class="flaticon2-cube"></i> Create new
+</a>
+<hr />
+@if (Model.Any())
+{
+    <div class="card card-custom">
+        <div class="card-header">
+            <div class="card-title">
+                <span class="card-icon">
+                    <i class="flaticon2-chat-1 text-primary"></i>
+                </span>
+                <h3 class="card-label">
+                    Users
+                    <small> Manege All Users</small>
+                </h3>
+            </div>
+
+        </div>
+        <div class="card-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Type</th>
+                        <th>Gender</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>
+                            @item.FullName
+                        </td>
+                        <td>
+                            @item.Email
+                        </td>
+                        <td>
+                            @item.Mobile
+                        </td>
+                        <td>
+                            @item.UserType
+                        </td>
+                        <td>
+                            @item.Gender
+                        </td>
+                        <td>
+                            <a href="~/User/Edit/@item.Id" class="btn btn-warning"><i class="flaticon flaticon-edit"></i>Edit</a>
+                            <a href="~/User/Delete/@item.Id" class="btn btn-danger" btn><i class="flaticon flaticon-delete"></i>Delete</a>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+}
+else
+{
+    <div class="alert alert-warning">
+        No Data !!
+    </div>
+}
+
+

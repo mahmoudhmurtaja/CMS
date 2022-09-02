@@ -1,0 +1,83 @@
+﻿@model DashboardViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to our CMS</h1>
+</div>
+<hr />
+<div class="row">
+    <div class="col-md-3">
+        <div class="card card-custom">
+            <div class="card-header">
+                <div class="card-title">
+                    <span class="card-icon">
+                        <i class="flaticon-users-1 text-primary"></i>
+                    </span>
+                    <h3 class="card-label">
+                        Users
+                    </h3>
+                </div>
+
+            </div>
+            <div class="card-body">
+                <h2>@Model.UserCount</h2>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card card-custom">
+            <div class="card-header">
+                <div class="card-title">
+                    <span class="card-icon">
+                        <i class="flaticon2-shelter text-primary"></i>
+                    </span>
+                    <h3 class="card-label">
+                        Organizations
+                    </h3>
+                </div>
+
+            </div>
+            <div class="card-body">
+                <h2>@Model.OrgCount</h2>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card card-custom">
+            <div class="card-header">
+                <div class="card-title">
+                    <span class="card-icon">
+                        <i class="flaticon-event-calendar-symbol text-primary"></i>
+                    </span>
+                    <h3 class="card-label">
+                        Events
+                    </h3>
+                </div>
+
+            </div>
+            <div class="card-body">
+                <h2>@Model.EventCount</h2>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card card-custom">
+            <div class="card-header">
+                <div class="card-title">
+                    <span class="card-icon">
+                        <i class="flaticon2-browser-2 text-primary"></i>
+                    </span>
+                    <h3 class="card-label">
+                        Posts
+                    </h3>
+                </div>
+
+            </div>
+            <div class="card-body">
+                <h2>@Model.PostCount</h2>
+            </div>
+        </div>
+    </div>
+</div>
