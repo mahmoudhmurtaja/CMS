@@ -30,7 +30,7 @@ namespace Clinic.Web.Services.Emails
             //string body = model.Body;
 
             var message = new MailMessage();
-            message.From = new MailAddress("tgsdk15@gmail.com", "Corona virus");
+            message.From = new MailAddress("test@gmail.com", "Corona virus");
             message.To.Add(new MailAddress(to));
             message.Subject = subject;
             //message.IsBodyHtml = true;
@@ -48,7 +48,7 @@ namespace Clinic.Web.Services.Emails
                 EnableSsl = true,
                 DeliveryMethod = SmtpDeliveryMethod.Network,
                 UseDefaultCredentials = false,
-                Credentials = new NetworkCredential("tgsdk15@gmail.com", "0592166243")
+                Credentials = new NetworkCredential("test@gmail.com", "**********")
             };
             await emailClient.SendMailAsync(message);
         }
